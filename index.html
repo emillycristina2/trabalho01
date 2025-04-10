@@ -32,7 +32,6 @@
       height: 80px;
       border-radius: 10px;
       vertical-align: middle;
-      animation: fadeIn 1.5s ease;
     }
 
     header h1 {
@@ -40,12 +39,10 @@
       margin-left: 20px;
       text-shadow: 0 0 10px #ffd700;
       vertical-align: middle;
-      animation: fadeIn 1.8s ease;
     }
 
     nav {
       margin-top: 10px;
-      animation: fadeIn 2s ease;
     }
 
     nav a {
@@ -82,25 +79,17 @@
       max-width: 1000px;
       margin: auto;
       opacity: 0;
-      transform: translateY(30px);
-      animation: fadeUp 1s ease forwards;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     section:nth-of-type(even) {
       background-color: #f0f5f0;
-    }
-
-    section:nth-of-type(2) {
-      animation-delay: 0.2s;
-    }
-    section:nth-of-type(3) {
-      animation-delay: 0.4s;
-    }
-    section:nth-of-type(4) {
-      animation-delay: 0.6s;
-    }
-    section:nth-of-type(5) {
-      animation-delay: 0.8s;
     }
 
     h2 {
@@ -119,30 +108,34 @@
       border-radius: 10px;
       margin: 10px;
       box-shadow: 0 0 15px #c0a060;
-      animation: fadeIn 1.5s ease;
     }
 
     iframe {
       box-shadow: 0 0 20px #a78c48;
       max-width: 100%;
       border-radius: 10px;
-      animation: fadeIn 1.5s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.98); }
-      to { opacity: 1; transform: scale(1); }
+    #topo {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #ffe066;
+      color: #0d5c42;
+      border: none;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #ffd700;
+      animation: pulse 2s infinite;
+      z-index: 1000;
     }
 
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px #ffd700; }
+      50% { box-shadow: 0 0 30px #ffe066; }
+      100% { box-shadow: 0 0 10px #ffd700; }
     }
 
     @media (max-width: 768px) {
@@ -166,15 +159,18 @@
 </head>
 <body>
 
+  <!-- Efeito Sonoro -->
+  <audio id="som" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_708c3613ab.mp3?filename=click-soft-176127.mp3" preload="auto"></audio>
+
   <header>
     <img src="https://upload.wikimedia.org/wikipedia/en/0/0e/The_Princess_and_the_Frog_poster.jpg" alt="Logo">
     <h1>A Princesa e o Sapo</h1>
     <nav>
-      <a href="#home">🏠 Home</a>
-      <a href="#info">📖 Informações</a>
-      <a href="#curiosidades">✨ Curiosidades</a>
-      <a href="#imagens">🖼️ Imagens</a>
-      <a href="#videos">🎬 Vídeos</a>
+      <a href="#home" onclick="tocarSom()">🏠 Home</a>
+      <a href="#info" onclick="tocarSom()">📖 Informações</a>
+      <a href="#curiosidades" onclick="tocarSom()">✨ Curiosidades</a>
+      <a href="#imagens" onclick="tocarSom()">🖼️ Imagens</a>
+      <a href="#videos" onclick="tocarSom()">🎬 Vídeos</a>
     </nav>
   </header>
 
@@ -210,6 +206,41 @@
     <p>Trailer oficial:</p>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/C7Z5aDZVQ9k" title="Trailer A Princesa e o Sapo" frameborder="0" allowfullscreen></iframe>
   </section>
+
+  <!-- Botão mágico -->
+  <button id="topo" onclick="subirTopo()">⬆️</button>
+
+  <script>
+    function tocarSom() {
+      const som = document.getElementById("som");
+      som.currentTime = 0;
+      som.play();
+    }
+
+    function subirTopo() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      tocarSom();
+    }
+
+    // Animação ao rolar a página
+    const sections = document.querySelectorAll("section");
+
+    const options = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 
 </body>
 </html>
