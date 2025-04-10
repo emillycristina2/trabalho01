@@ -4,39 +4,194 @@
   <meta charset="UTF-8">
   <title>A Princesa e o Sapo</title>
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/616/616408.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fffef5;
+      color: #2e2e2e;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #0d5c42, #1e7e60);
+      padding: 20px;
+      text-align: center;
+      color: #fff8dc;
+      box-shadow: 0 0 20px #a78c48;
+    }
+
+    header img {
+      height: 80px;
+      border-radius: 10px;
+      vertical-align: middle;
+      animation: fadeIn 1.5s ease;
+    }
+
+    header h1 {
+      display: inline-block;
+      margin-left: 20px;
+      text-shadow: 0 0 10px #ffd700;
+      vertical-align: middle;
+      animation: fadeIn 1.8s ease;
+    }
+
+    nav {
+      margin-top: 10px;
+      animation: fadeIn 2s ease;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #fff8dc;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #ffe066;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+
+    nav a:hover {
+      color: #ffe066;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    section:nth-of-type(even) {
+      background-color: #f0f5f0;
+    }
+
+    section:nth-of-type(2) {
+      animation-delay: 0.2s;
+    }
+    section:nth-of-type(3) {
+      animation-delay: 0.4s;
+    }
+    section:nth-of-type(4) {
+      animation-delay: 0.6s;
+    }
+    section:nth-of-type(5) {
+      animation-delay: 0.8s;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px #a78c48;
+      color: #0d5c42;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 10px;
+      box-shadow: 0 0 15px #c0a060;
+      animation: fadeIn 1.5s ease;
+    }
+
+    iframe {
+      box-shadow: 0 0 20px #a78c48;
+      max-width: 100%;
+      border-radius: 10px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        display: block;
+        margin: 10px 0 0;
+      }
+
+      nav {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 10px;
+      }
+    }
+  </style>
 </head>
-<body style="margin: 0; font-family: Arial, sans-serif; scroll-behavior: smooth; background-color: #fffef5; color: #2e2e2e;">
+<body>
 
-  <!-- Cabeçalho -->
-  <div style="background: linear-gradient(to right, #0d5c42, #1e7e60); padding: 20px; text-align: center; box-shadow: 0 0 20px #a78c48;">
-    <img src="https://upload.wikimedia.org/wikipedia/en/0/0e/The_Princess_and_the_Frog_poster.jpg" alt="Logo" style="height: 80px; vertical-align: middle; border-radius: 10px;">
-    <h1 style="display: inline; color: #fff8dc; margin-left: 20px; text-shadow: 0 0 10px #ffd700;">A Princesa e o Sapo</h1>
-    <div style="margin-top: 10px;">
-      <a href="#home" style="margin: 10px; color: #fff8dc; text-decoration: none;">Home</a>
-      <a href="#info" style="margin: 10px; color: #fff8dc; text-decoration: none;">Informações</a>
-      <a href="#curiosidades" style="margin: 10px; color: #fff8dc; text-decoration: none;">Curiosidades</a>
-      <a href="#imagens" style="margin: 10px; color: #fff8dc; text-decoration: none;">Imagens</a>
-      <a href="#videos" style="margin: 10px; color: #fff8dc; text-decoration: none;">Vídeos</a>
-    </div>
-  </div>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/0e/The_Princess_and_the_Frog_poster.jpg" alt="Logo">
+    <h1>A Princesa e o Sapo</h1>
+    <nav>
+      <a href="#home">🏠 Home</a>
+      <a href="#info">📖 Informações</a>
+      <a href="#curiosidades">✨ Curiosidades</a>
+      <a href="#imagens">🖼️ Imagens</a>
+      <a href="#videos">🎬 Vídeos</a>
+    </nav>
+  </header>
 
-  <!-- Home -->
-  <section id="home" style="padding: 40px; background-color: #f0f5f0;">
-    <h2 style="text-shadow: 0 0 8px #a78c48;">Bem-vindo ao mundo mágico de Tiana!</h2>
+  <section id="home">
+    <h2>Bem-vindo ao mundo mágico de Tiana!</h2>
     <p>"A Princesa e o Sapo" é um filme encantador da Disney que traz uma princesa determinada, um príncipe sapo e uma jornada cheia de magia em Nova Orleans.</p>
   </section>
 
-  <!-- Informações -->
-  <section id="info" style="padding: 40px;">
-    <h2 style="text-shadow: 0 0 8px #a78c48;">Informações</h2>
+  <section id="info">
+    <h2>Informações</h2>
     <p><strong>Lançamento:</strong> 2009</p>
     <p><strong>Direção:</strong> Ron Clements e John Musker</p>
     <p><strong>Sinopse:</strong> Tiana, uma jovem trabalhadora com o sonho de abrir seu próprio restaurante, acaba envolvida em uma aventura mágica ao beijar um príncipe transformado em sapo.</p>
   </section>
 
-  <!-- Curiosidades -->
-  <section id="curiosidades" style="padding: 40px; background-color: #e6ede4;">
-    <h2 style="text-shadow: 0 0 8px #a78c48;">Curiosidades</h2>
+  <section id="curiosidades">
+    <h2>Curiosidades</h2>
     <ul>
       <li>Foi o primeiro filme da Disney a ter uma princesa negra como protagonista.</li>
       <li>A história se passa em Nova Orleans, com forte influência da cultura cajun.</li>
@@ -44,18 +199,16 @@
     </ul>
   </section>
 
-  <!-- Imagens -->
-  <section id="imagens" style="padding: 40px;">
-    <h2 style="text-shadow: 0 0 8px #a78c48;">Imagens</h2>
-    <img src="https://upload.wikimedia.org/wikipedia/en/9/91/Tiana_disney.png" alt="Tiana" style="height: 200px; margin: 10px; border-radius: 10px; box-shadow: 0 0 15px #c0a060;">
-    <img src="https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-1mddv8e_f51d48e7.jpeg" alt="Cena do filme" style="height: 200px; margin: 10px; border-radius: 10px; box-shadow: 0 0 15px #c0a060;">
+  <section id="imagens">
+    <h2>Imagens</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/91/Tiana_disney.png" alt="Tiana">
+    <img src="https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-1mddv8e_f51d48e7.jpeg" alt="Cena do filme">
   </section>
 
-  <!-- Vídeos -->
-  <section id="videos" style="padding: 40px; background-color: #f0f5f0;">
-    <h2 style="text-shadow: 0 0 8px #a78c48;">Vídeos</h2>
+  <section id="videos">
+    <h2>Vídeos</h2>
     <p>Trailer oficial:</p>
-    <iframe width="300" height="200" src="https://www.youtube.com/embed/C7Z5aDZVQ9k" frameborder="0" allowfullscreen style="box-shadow: 0 0 20px #a78c48;"></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/C7Z5aDZVQ9k" title="Trailer A Princesa e o Sapo" frameborder="0" allowfullscreen></iframe>
   </section>
 
 </body>
