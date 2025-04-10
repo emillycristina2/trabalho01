@@ -4,243 +4,71 @@
   <meta charset="UTF-8">
   <title>A Princesa e o Sapo</title>
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/616/616408.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #fffef5;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+      background: linear-gradient(to bottom, #fffdf4, #d8f5e3);
       color: #2e2e2e;
-      line-height: 1.6;
-    }
-
-    header {
-      background: linear-gradient(to right, #0d5c42, #1e7e60);
-      padding: 20px;
-      text-align: center;
-      color: #fff8dc;
-      box-shadow: 0 0 20px #a78c48;
-    }
-
-    header img {
-      height: 80px;
-      border-radius: 10px;
-      vertical-align: middle;
-    }
-
-    header h1 {
-      display: inline-block;
-      margin-left: 20px;
-      text-shadow: 0 0 10px #ffd700;
-      vertical-align: middle;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #fff8dc;
-      font-weight: 500;
-      position: relative;
-      transition: color 0.3s;
-    }
-
-    nav a::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 2px;
-      background: #ffe066;
-      transition: width 0.3s;
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-    }
-
-    nav a:hover {
-      color: #ffe066;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease-out;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    section:nth-of-type(even) {
-      background-color: #f0f5f0;
     }
 
     h2 {
-      margin-bottom: 20px;
-      text-shadow: 0 0 8px #a78c48;
-      color: #0d5c42;
+      background: linear-gradient(to right, #3baf75, #a96fd8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(167, 140, 72, 0.4);
     }
 
-    ul {
-      padding-left: 20px;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin: 10px;
-      box-shadow: 0 0 15px #c0a060;
-    }
-
-    iframe {
-      box-shadow: 0 0 20px #a78c48;
-      max-width: 100%;
-      border-radius: 10px;
-    }
-
-    #topo {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #ffe066;
-      color: #0d5c42;
-      border: none;
-      border-radius: 50%;
+    .personagem-card {
+      max-width: 220px;
+      text-align: center;
+      background-color: #ffffffdd;
       padding: 15px;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 0 20px #ffd700;
-      animation: pulse 2s infinite;
-      z-index: 1000;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #b0d8a5;
+      transition: transform 0.3s;
     }
 
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px #ffd700; }
-      50% { box-shadow: 0 0 30px #ffe066; }
-      100% { box-shadow: 0 0 10px #ffd700; }
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        display: block;
-        margin: 10px 0 0;
-      }
-
-      nav {
-        margin-top: 10px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      nav a {
-        margin: 10px;
-      }
+    .personagem-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #89e9a2;
     }
   </style>
 </head>
 <body>
 
-  <!-- Efeito Sonoro -->
-  <audio id="som" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_708c3613ab.mp3?filename=click-soft-176127.mp3" preload="auto"></audio>
+  <!-- Cabeçalho -->
+  <div style="background: linear-gradient(to right, #0d5c42, #1e7e60); padding: 20px; text-align: center; box-shadow: 0 0 20px #a78c48;">
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/0e/The_Princess_and_the_Frog_poster.jpg" alt="Logo" style="height: 80px; vertical-align: middle; border-radius: 10px;">
+    <h1 style="display: inline; color: #fff8dc; margin-left: 20px; text-shadow: 0 0 10px #ffd700;">A Princesa e o Sapo</h1>
+    <div style="margin-top: 10px;">
+      <a href="#home" style="margin: 10px; color: #fff8dc; text-decoration: none;">Home</a>
+      <a href="#info" style="margin: 10px; color: #fff8dc; text-decoration: none;">Informações</a>
+      <a href="#curiosidades" style="margin: 10px; color: #fff8dc; text-decoration: none;">Curiosidades</a>
+      <a href="#personagens" style="margin: 10px; color: #fff8dc; text-decoration: none;">👑 Personagens</a>
+      <a href="#imagens" style="margin: 10px; color: #fff8dc; text-decoration: none;">Imagens</a>
+      <a href="#videos" style="margin: 10px; color: #fff8dc; text-decoration: none;">Vídeos</a>
+    </div>
+  </div>
 
-  <header>
-    <img src="https://upload.wikimedia.org/wikipedia/en/0/0e/The_Princess_and_the_Frog_poster.jpg" alt="Logo">
-    <h1>A Princesa e o Sapo</h1>
-    <nav>
-      <a href="#home" onclick="tocarSom()">🏠 Home</a>
-      <a href="#info" onclick="tocarSom()">📖 Informações</a>
-      <a href="#curiosidades" onclick="tocarSom()">✨ Curiosidades</a>
-      <a href="#imagens" onclick="tocarSom()">🖼️ Imagens</a>
-      <a href="#videos" onclick="tocarSom()">🎬 Vídeos</a>
-    </nav>
-  </header>
-
-  <section id="home">
+  <!-- Home -->
+  <section id="home" style="padding: 40px; background-color: #f0f5f0; border-radius: 15px; margin: 20px; box-shadow: 0 0 20px #e3cfa4;">
     <h2>Bem-vindo ao mundo mágico de Tiana!</h2>
     <p>"A Princesa e o Sapo" é um filme encantador da Disney que traz uma princesa determinada, um príncipe sapo e uma jornada cheia de magia em Nova Orleans.</p>
   </section>
 
-  <section id="info">
+  <!-- Informações -->
+  <section id="info" style="padding: 40px; background-color: #fef4e9; border-radius: 15px; margin: 20px; box-shadow: 0 0 20px #e3cfa4;">
     <h2>Informações</h2>
     <p><strong>Lançamento:</strong> 2009</p>
     <p><strong>Direção:</strong> Ron Clements e John Musker</p>
     <p><strong>Sinopse:</strong> Tiana, uma jovem trabalhadora com o sonho de abrir seu próprio restaurante, acaba envolvida em uma aventura mágica ao beijar um príncipe transformado em sapo.</p>
   </section>
 
-  <section id="curiosidades">
+  <!-- Curiosidades -->
+  <section id="curiosidades" style="padding: 40px; background-color: #e6f4f1; border-radius: 15px; margin: 20px; box-shadow: 0 0 20px #c9e2cf;">
     <h2>Curiosidades</h2>
     <ul>
       <li>Foi o primeiro filme da Disney a ter uma princesa negra como protagonista.</li>
       <li>A história se passa em Nova Orleans, com forte influência da cultura cajun.</li>
-      <li>É um dos últimos filmes da Disney com animação 2D tradicional.</li>
-    </ul>
-  </section>
-
-  <section id="imagens">
-    <h2>Imagens</h2>
-    <img src="https://upload.wikimedia.org/wikipedia/en/9/91/Tiana_disney.png" alt="Tiana">
-    <img src="https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-1mddv8e_f51d48e7.jpeg" alt="Cena do filme">
-  </section>
-
-  <section id="videos">
-    <h2>Vídeos</h2>
-    <p>Trailer oficial:</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/C7Z5aDZVQ9k" title="Trailer A Princesa e o Sapo" frameborder="0" allowfullscreen></iframe>
-  </section>
-
-  <!-- Botão mágico -->
-  <button id="topo" onclick="subirTopo()">⬆️</button>
-
-  <script>
-    function tocarSom() {
-      const som = document.getElementById("som");
-      som.currentTime = 0;
-      som.play();
-    }
-
-    function subirTopo() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      tocarSom();
-    }
-
-    // Animação ao rolar a página
-    const sections = document.querySelectorAll("section");
-
-    const options = {
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, options);
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-  </script>
-
-</body>
-</html>
