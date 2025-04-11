@@ -25,24 +25,27 @@
 
     /* Cabeçalho */
     header {
+      display: flex;
+      align-items: center; /* Alinha a imagem e o título verticalmente */
       background: linear-gradient(to right, #0d5c42, #1e7e60);
       padding: 20px;
-      text-align: center;
       box-shadow: 0 0 20px #a78c48;
     }
 
     header img {
       height: 80px;
-      vertical-align: middle;
       border-radius: 10px;
     }
 
     header h1 {
-      display: inline;
       color: #fff8dc;
       margin-left: 20px;
       text-shadow: 0 0 10px #ffd700;
       font-family: 'Roboto', sans-serif;
+    }
+
+    header div {
+      margin-left: auto; /* Empurra os links para a direita */
     }
 
     header a {
@@ -181,20 +184,9 @@
   <section id="videos">
     <h2>Vídeo do Trailer</h2>
     <div class="video-container">
-      <iframe src="https://youtu.be/gqgPzVsJhB8?t=105" title="A Princesa e o Sapo - Trailer Oficial" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/gqgPzVsJhB8" title="A Princesa e o Sapo - Trailer Oficial" allowfullscreen></iframe>
     </div>
   </section>
 
 </body>
 </html>
-
-
-  
-   
-
-
-
-
-
-
-
