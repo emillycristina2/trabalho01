@@ -80,21 +80,6 @@
       transform: scale(1.05);
     }
 
-    /* Estilo para o vídeo */
-    .video-container {
-      display: flex;
-      justify-content: center;
-      margin: 30px 0;
-    }
-
-    .video-container iframe {
-      width: 100%;
-      max-width: 800px;
-      height: 450px;
-      border: none;
-      border-radius: 10px;
-    }
-
     /* Efeito de transição para cards de personagens */
     .personagem-card {
       max-width: 220px;
@@ -117,6 +102,19 @@
       -webkit-text-fill-color: transparent;
       text-shadow: 0 0 10px rgba(167, 140, 72, 0.4);
       font-family: 'Roboto', sans-serif;
+    }
+
+    /* Layout dos cards de personagens */
+    .personagens-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .personagem-card img {
+      width: 100%;
+      border-radius: 10px;
     }
 
   </style>
@@ -159,6 +157,37 @@
       <li>A história se passa em Nova Orleans, com forte influência da cultura cajun.</li>
       <li>O filme tem uma trilha sonora maravilhosa composta por Randy Newman.</li>
     </ul>
+  </section>
+
+  <!-- Personagens -->
+  <section id="personagens">
+    <h2>Personagens Principais</h2>
+    <div class="personagens-container">
+      <!-- Personagem 1 -->
+      <div class="personagem-card">
+        <img src="https://vignette.wikia.nocookie.net/disney/images/2/22/Tiana_Disney_Princess.png/revision/latest/scale-to-width-down/350?cb=20180410030343" alt="Tiana">
+        <h3>Tiana</h3>
+        <p>A protagonista do filme, uma jovem trabalhadora que sonha em abrir seu próprio restaurante.</p>
+      </div>
+      <!-- Personagem 2 -->
+      <div class="personagem-card">
+        <img src="https://vignette.wikia.nocookie.net/disney/images/2/2e/Prince_Naveen.png/revision/latest/scale-to-width-down/350?cb=20190412010136" alt="Prince Naveen">
+        <h3>Príncipe Naveen</h3>
+        <p>Um príncipe encantado que se transforma em sapo e se junta a Tiana em uma aventura mágica.</p>
+      </div>
+      <!-- Personagem 3 -->
+      <div class="personagem-card">
+        <img src="https://vignette.wikia.nocookie.net/disney/images/9/97/Dr._Facilier.png/revision/latest/scale-to-width-down/350?cb=20170419172634" alt="Dr. Facilier">
+        <h3>Dr. Facilier</h3>
+        <p>O vilão do filme, que usa magia negra para tentar ganhar poder e controle sobre os outros.</p>
+      </div>
+      <!-- Personagem 4 -->
+      <div class="personagem-card">
+        <img src="https://vignette.wikia.nocookie.net/disney/images/6/67/Lottie_Delight.png/revision/latest/scale-to-width-down/350?cb=20180707122012" alt="Charlotte">
+        <h3>Charlotte</h3>
+        <p>Melhor amiga de Tiana, que sonha em se casar com um príncipe e ter uma vida de luxo.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Galeria de Imagens -->
