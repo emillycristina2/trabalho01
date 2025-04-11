@@ -34,6 +34,42 @@
       transform: scale(1.05);
       box-shadow: 0 0 25px #89e9a2;
     }
+
+    /* Flexbox para galeria de imagens */
+    .galeria-imagens {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .galeria-imagens img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .galeria-imagens img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Estilo para o vídeo */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
@@ -72,3 +108,30 @@
     <ul>
       <li>Foi o primeiro filme da Disney a ter uma princesa negra como protagonista.</li>
       <li>A história se passa em Nova Orleans, com forte influência da cultura cajun.</li>
+      <li>O filme tem uma trilha sonora maravilhosa composta por Randy Newman.</li>
+    </ul>
+  </section>
+
+  <!-- Galeria de Imagens -->
+  <section id="imagens" style="padding: 40px; background-color: #fef4e9; border-radius: 15px; margin: 20px; box-shadow: 0 0 20px #e3cfa4;">
+    <h2>Galeria de Imagens</h2>
+    <div class="galeria-imagens">
+      <img src="https://vignette.wikia.nocookie.net/disney/images/1/18/Tiana_poster.jpg/revision/latest?cb=20190723185757" alt="Imagem 1">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Tiana%27s_Frog_Prince.jpg/220px-Tiana%27s_Frog_Prince.jpg" alt="Imagem 2">
+      <img src="https://vignette.wikia.nocookie.net/disney/images/c/c9/Tiana%27s_wedding.jpg/revision/latest?cb=20190723185847" alt="Imagem 3">
+    </div>
+  </section>
+
+  <!-- Vídeos -->
+  <section id="videos" style="padding: 40px; background-color: #f0f5f0; border-radius: 15px; margin: 20px; box-shadow: 0 0 20px #e3cfa4;">
+    <h2>Vídeo do Trailer</h2>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/ti5ftnJ7VvI" title="A Princesa e o Sapo - Trailer Oficial" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </section>
+
+</body>
+</html>
+
+
+  
