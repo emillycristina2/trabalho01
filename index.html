@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Resetando margens e padding para um layout mais limpo */
     * {
       margin: 0;
       padding: 0;
@@ -23,10 +22,9 @@
       line-height: 1.6;
     }
 
-    /* Cabeçalho */
     header {
       display: flex;
-      align-items: center; /* Alinha a imagem e o título verticalmente */
+      align-items: center;
       background: linear-gradient(to right, #0d5c42, #1e7e60);
       padding: 20px;
       box-shadow: 0 0 20px #a78c48;
@@ -45,7 +43,7 @@
     }
 
     header div {
-      margin-left: auto; /* Empurra os links para a direita */
+      margin-left: auto;
     }
 
     header a {
@@ -55,7 +53,6 @@
       font-weight: bold;
     }
 
-    /* Seções */
     section {
       margin: 20px;
       padding: 40px;
@@ -63,7 +60,6 @@
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
 
-    /* Efeito de transição para cards de personagens */
     .personagem-card {
       max-width: 220px;
       text-align: center;
@@ -87,7 +83,6 @@
       font-family: 'Roboto', sans-serif;
     }
 
-    /* Layout dos cards de personagens */
     .personagens-container {
       display: flex;
       flex-wrap: wrap;
@@ -100,7 +95,6 @@
       border-radius: 10px;
     }
 
-    /* Estilo para o iframe do vídeo */
     .video-container iframe {
       width: 100%;
       max-width: 800px;
@@ -153,19 +147,40 @@
   <section id="personagens">
     <h2>Personagens Principais</h2>
     <div class="personagens-container">
-      <!-- Personagem 1 -->
       <div class="personagem-card">
         <img src="https://i.pinimg.com/564x/f5/1a/c0/f51ac03ed8a2a39170d1198a378a7f19.jpg" alt="Tiana">
         <h3>Tiana</h3>
         <p>A protagonista do filme, uma jovem trabalhadora que sonha em abrir seu próprio restaurante.</p>
       </div>
-      <!-- Personagem 2 -->
       <div class="personagem-card">
         <img src="https://i.pinimg.com/236x/44/4a/33/444a330ac92ed584cf9db7ccce34acc0.jpg" alt="Príncipe Naveen">
         <h3>Príncipe Naveen</h3>
         <p>Um príncipe encantado que se transforma em sapo e se junta a Tiana em uma aventura mágica.</p>
       </div>
-      <!-- Personagem 3 -->
+      <div class="personagem-card">
+        <img src="https://preview.redd.it/r2oy3ui1ki871.jpg?auto=webp&s=c0597dbfd611fecd4715ee4d6bf4b93a5a580a5f" alt="Dr. Facilier">
+        <h3>Dr. Facilier</h3>
+        <p>O vilão do filme, que usa magia negra para tentar ganhar poder e controle sobre os outros.</p>
+      </div>
+      <div class="personagem-card">
+        <img src="https://pbs.twimg.com/media/EbyMMdDXgAIMSxt.jpg" alt="Charlotte">
+        <h3>Charlotte</h3>
+        <p>Melhor amiga de Tiana, que sonha em se casar com um príncipe e ter uma vida de luxo.</p>
+      </div>
+    </div>
+  </section>
 
- 
- 
+  <!-- Vídeos -->
+  <section id="videos">
+    <h2>Música "Quase Lá" (Tiana - Versão em Português)</h2>
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/sP47iA0tJ-0" 
+        title="A Princesa e o Sapo - Quase Lá (Português)" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+</body>
+</html>
